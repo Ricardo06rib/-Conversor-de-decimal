@@ -58,6 +58,28 @@ void converteBinario (int dec)
     }
 }
 
+void converteOctal (int dec)
+{
+
+    printf("\nOctal: ");
+
+    int resto[8], i = 0;
+
+    while (dec >= 1)
+    {
+
+        resto[i++] = dec % 8;
+        dec = dec / 8;
+
+    }
+
+    while (i > 0)
+    {
+
+        printf("%d", resto[--i]);
+
+    }
+}
 
 int main ()
 {
@@ -70,6 +92,7 @@ int main ()
    scanf("%d", &decimal);
 
    converteBinario(decimal);
+   converteOctal(decimal);
    converteHexadecimal(decimal);
 
    return 0;
