@@ -7,8 +7,38 @@ Nome do projeto: Conversor de decimal
 #include<stdio.h>
 #include<locale.h>
 
+void converteHexadecimal (int dec)
+{
+
+    printf("\nHexadecimal: ");
+
+    int resto[8], i = 0;
+
+    while (dec >= 1)
+    {
+
+        resto[i++] = dec % 16;
+        dec = dec / 16;
+
+    }
+
+    while (i > 0)
+    {
+        if (resto[i-1] >= 10)
+        {
+            printf("%c", 55 + resto[--i]);
+        } else
+        {
+            printf("%d", resto[--i]);
+        }
+    }
+}
+
+
 void converteBinario (int dec)
 {
+
+    printf("\nBinário: ");
 
     int resto[8], i = 0;
 
@@ -19,6 +49,7 @@ void converteBinario (int dec)
         dec = dec / 2;
 
     }
+
     while (i > 0)
     {
 
@@ -31,14 +62,15 @@ void converteBinario (int dec)
 int main ()
 {
 
-    setlocale(LC_ALL, "Portuguese");
+   setlocale(LC_ALL, "Portuguese");
 
    int decimal;
 
-   printf("Digite um número decimal:");
+   printf("Digite um número decimal: ");
    scanf("%d", &decimal);
 
    converteBinario(decimal);
+   converteHexadecimal(decimal);
 
    return 0;
 }
