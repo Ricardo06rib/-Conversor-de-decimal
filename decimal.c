@@ -1,10 +1,11 @@
 /*
 Autor: Ricardo Fernandes Ribeiro
-Curso: Sistemas de Informação - 1 Período
+Curso: Sistemas de InformaÃ§Ã£o - 1 PerÃ­odo
 Nome do projeto: Conversor de decimal
 */
 
 #include<stdio.h>
+#include<locale.h>
 
 void converteBinario (int dec)
 {
@@ -30,9 +31,11 @@ void converteBinario (int dec)
 int main ()
 {
 
+    setlocale(LC_ALL, "Portuguese");
+
    int decimal;
 
-   printf("Digite um número decimal:");
+   printf("Digite um nÃºmero decimal:");
    scanf("%d", &decimal);
 
    converteBinario(decimal);
